@@ -11,12 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATES_DIR = Path.joinpath(BASE_DIR,'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -27,8 +26,7 @@ SECRET_KEY = "django-insecure-v!&=3^@c^=qw2y%o=ksa))oro77-2=3ssurmyjtd4#dnn(!rpp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -40,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'blog.apps.BlogConfig',
+    'ckeditor',
+    'members',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = "mysite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATES_DIR,],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -114,15 +114,19 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+import os 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
+STATIC_ROOT =os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = "/static/"
-STATIC_ROOT =Path.joinpath(BASE_DIR,'staticfiles')
-STAITIC_DIR = (Path.joinpath(BASE_DIR,'static'))
-django_heroku.settings(locals())
+STATIC_ROOT =os.path.join(BASE_DIR,'static')
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+MEDIA_ROOT = Path.joinpath(BASE_DIR,'static/images')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_REDIRECT_URL = 'post_list'
+LOGOUT_REDIRECT_URL = 'post_list'
+import django_heroku
+django_heroku.settings(locals())

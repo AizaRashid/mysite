@@ -1,14 +1,25 @@
 {% extends 'blog/base.html' %}
-
+{% block title %}Create a New Blog Post{% endblock%}
 {% block content %}
-    <h1>New post</h1>
+<div class='container'>
+   <div class="row">
+      <div class="col-md-4">
+         <div class="inner">
+   <h2>New post</h2>
 
-    <form method="POST" class="post-form">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="save btn btn-default">Save</button>
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.media }}
+     {{form.as_p}}
+     <button type="submit" class="save btn btn-primary">Save</button>
     </form>
-
+  <script>
+        let name = "{{ user.id }}";
+        document.getElementById("elder").value = name;
+    </script>
     <script>var editor = new MediumEditor('.editable');</script>
-
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}

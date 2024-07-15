@@ -1,0 +1,88 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="inner">              
+        {% if user.profile.profile_pic %}
+        <img src="{{ user.profile.profile_pic.url }}" class="img-fluid rounded-start">
+         {% else %}
+        <img src="{% static 'images/default_profile_pic.jpg' %}" class="img-fluid rounded-start">
+        {% endif %}<div class="col-md-10">
+      <div class="card-body">
+        <h5 class="card-title">
+            {{ user.profile.first_name }}
+            {{ user.profile.last_name }}
+        </h5>
+        <h2 class="card-text">
+            {{ user.profile.bio }}
+        </h2>
+            <p>{{ user.profile.description }}</p>
+<h2>{{profile.user.username}}'s Profile</h2>
+    
+<div class="card">
+  <div class="card-header">Followers:{{profile.followers.count}}
+  </div>
+  <div class="card-body">
+    <p class="card-text"> {% for following in profile.followers.all %}
+        <a href="{%url 'profile' following.user.id %}">@{{ following }}</a><br/>
+        {% endfor %} </p>
+</div>
+  </div><br/><br/>
+  <div class="card">
+  <div class="card-header">Following: {{profile.following.count}}</div>
+  <div class="card-body">
+    <p class="card-text">{% for following in profile.following.all %}
+        <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br/>
+        {% endfor %}</p><br/><br/>
+        </div>
+</div><br/><br/>
+{% if request.user.is_authenticated %}
+<form method=POST>
+        {% csrf_token %}
+        {% if profile in user.profile.followers.all %}
+        <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit">Unfollow @{{profile.user.username }}</button>
+        {% else %}
+        <button class="btn btn-outline-success" name="follow" value="follow" type="submit">Follow @{{profile.user.username }}</button>
+        {% endif %}
+      </form>
+      {% else %}
+        <p>Login To Follow!</p>
+        {% endif %}
+     <p class="small text-muted">
+
+              {% if user.profile.website_url %}
+                  <a href="{{ user.profile.website_url }}">| Website</a>
+              {% endif %}
+
+              {% if user.facebook_url %}
+                  | <a href="{{ user.profile.facebook_url }}">Facebook</a>
+              {% endif %}
+
+              {% if user.twitter_url %}
+                  | <a href="{{ user.profile.twitter_url }}">Twitter</a>
+              {% endif %}
+
+              {% if user.instagram_url %}
+                  | <a href="{{ user.profile.insta_url }}">Instagram</a>
+              {% endif %}
+              
+
+          </p>
+        <h2>{{profile.user.username}} Posts</h2>
+        {% for post in posts %}
+          <li><a class="category" href="{%url 'post_detail' post.pk %}">{{post.title}}</a></li>
+        {% endfor %}
+      </div>
+   </div>
+</div>
+</div>
+        
+{% endblock %}
+                      
+
+
+    
