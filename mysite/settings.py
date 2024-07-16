@@ -25,9 +25,8 @@ TEMPLATES_DIR = Path.joinpath(BASE_DIR,'templates')
 SECRET_KEY = "django-insecure-v!&=3^@c^=qw2y%o=ksa))oro77-2=3ssurmyjtd4#dnn(!rpp"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = ['']
 
 # Application definition
 
@@ -117,8 +116,7 @@ USE_TZ = True
 
 import os 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATIC_ROOT =os.path.join(BASE_DIR,'staticfiles')
+# https://docs.djangoproject.com/en/5.0/howto/static-files
 STATIC_URL = "/static/"
 STATIC_ROOT =os.path.join(BASE_DIR,'static')
 STATIC_DIR = os.path.join(BASE_DIR,'static')
