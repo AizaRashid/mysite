@@ -1,15 +1,38 @@
 {% extends 'blog/base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="inner">
-<h2>About me</h2>
-<p>Thanks for visiting my blog! Check all this cool stuff about me!</p>
+				<image class="image" src="{% static 'images/explore.webp' %}">
+   <h2>QuirkTale: Exploring the World of Technology</h2>
+   <p class="category">Exploring different cultures, food, and people around the globe!</h2>
+   <p>I am a tech enthusiast who loves to explore the latest trends and innovations in the world of technology. From gadgets to software, I cover it all.</p>
             </div>
          </div>
     </div>
+    <div class="row">
+		<div class="col-md-4">
+			<div class="inner">
+				<image class="image" src="{% static 'images/life.webp' %}">
+   <h2>QuirkTale: Exploring life</h2>
+   <p class="category">Exploring the art of living life and being positive!</h2>
+   <p>I am same as you.In this world where AI is ruling let's learn how to deal with the powers of AI and technology.</p>
+      </div>
+         </div>
+    </div>
+   <div class="row">
+   <div class="col-md-4">
+			<div class="inner">
+				<image class="image" src="{% static 'images/hi.webp' %}">
+					 <h2> Listen My QuirkTales and Share yours!</h2>
+					 <p class="category">Survival Of Fittest!Let's be the Fittest</h2>
+					 	<p>Let's Connect and Share because we are humans and humans have emotions!</p>
+				 </div>
+         </div>
+    </div>
+  
 </div>
 
 {% endblock %}
