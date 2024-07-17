@@ -15,6 +15,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 # Create your views here.
+
 def about(request):
     return render(request,'blog/about.html')
 
@@ -63,13 +64,13 @@ class PostDetailView(DetailView):
 
 
 class CreatePostView(LoginRequiredMixin,CreateView):
-    login_url = '/login/'
-    template_name="blog/post_form.html"
-    redirect_field_name = 'blog/post_detail.html'
+        login_url = '/login/'
+        template_name="blog/post_form.html"
+        redirect_field_name = 'blog/post_detail.html'
 
-    form_class = PostForm
-    model = Post
-
+        form_class = PostForm
+        model = Post
+    
 class AddCategoryView(LoginRequiredMixin,CreateView):
     login_url ='/login/'
     redirect_field_name = 'blog/post_detail.html'
