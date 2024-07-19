@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-v!&=3^@c^=qw2y%o=ksa))oro77-2=3ssurmyjtd4#dnn(!rpp
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['quirktale.com','www.quirktale.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "blog.middleware.SecureRequiredMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -106,16 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS= True
-SECURE_SSL_PRELOAD = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS='DENY'
 
 LANGUAGE_CODE = "en-us"
 
@@ -128,7 +117,7 @@ USE_TZ = True
 import os 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files
-STATIC_URL = 'https://www.example.com/static'
+STATIC_URL = '/static/'
 STATIC_ROOT =os.path.join(BASE_DIR,'static')
 STATIC_DIR = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'static/images')
