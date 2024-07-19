@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
    <div class="row">
-    <div class=col-md-4>
+    <div class="col-md-4">
       <div class="inner">
         <h2 class='posttitle loader'>{{ post.title }}</h2><br/><br/>
          <h2 class='posttitle loader'>{{ post.title_tag }}</h2>
@@ -97,6 +97,8 @@
     
        <h2><a href="{% url 'author_profile' post.author.profile.id %}" class="btn btn-outline-primary"> View {{ post.author.profile.user.username }}'s Profile
        </a></h2>
+      </div>
+      </div>
     
       </div>
    </div>
