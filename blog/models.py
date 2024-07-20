@@ -7,7 +7,6 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 # Create your models here.
-
 class Category(models.Model):
     name =  models.CharField(max_length=255,unique=True)
 
@@ -48,6 +47,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     title_tag = models.CharField(max_length=255,default='title tag')
     header_image = models.ImageField(null=True,blank=True,upload_to="header_images/")
+    alt_text = models.CharField(max_length=255,blank=True,null=True)
     text = RichTextField(blank=True,null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)

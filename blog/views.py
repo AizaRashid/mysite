@@ -46,7 +46,7 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
-
+   
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
         context = super(PostDetailView, self).get_context_data(*args, **kwargs)
@@ -60,7 +60,6 @@ class PostDetailView(DetailView):
         context["total_likes"] = total_likes
         context["liked"] = liked
         return context
-
 
 
 class CreatePostView(LoginRequiredMixin,CreateView):

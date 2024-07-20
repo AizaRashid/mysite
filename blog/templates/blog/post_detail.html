@@ -1,28 +1,25 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-
 {% block content %}
 <div class="container">
    <div class="row">
     <div class="col-md-4">
       <div class="inner">
         <h2 class='posttitle loader'>{{ post.title }}</h2><br/><br/>
-         <h2 class='posttitle loader'>{{ post.title_tag }}</h2>
+         <p>{{ post.title_tag }}</p>
         <small>By:
           {{post.author}}
         {% if post.published_date %}
             <div class="date postdate">
                 {{ post.published_date }}
             </div>
-
         {% else %}
             <a class="btn btn-outline-dark" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-        {% endif %}
+        {% endif %}<br/><br/>
       {% if post.header_image %}
-      <p class='postcontent' >
-      <img src="{{post.header_image.url}}"><br/><br/>
+      <img class='img' src="{{post.header_image.url}}" alt="{{ post.alt_text }}"><br/><br/>
       {% endif %}
-      {{ post.text|safe|linebreaksbr }}</p>
+      {{ post.text|safe|linebreaksbr }}</p><br/><br/>
 
       {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
