@@ -49,8 +49,44 @@
         <small><a href="{% url 'login_user' %}">Login</a> to like</small>
     {% endif %}
         - {{ total_likes }} Likes
-    </form>
-
+    </form><br/><br/>
+  <button class="btn btn-outline-success">Shareit</button>
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://www.facebook.com/sharer/sharer.php?url={{ request.build_absolute_uri }}" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Pinterest -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}" role="button"
+          ><i class="fab fa-pinterest"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://www.instagram.com/share?url={{ request.build_absolute_uri }}" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Whatsapp -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://api.whatsapp.com/send?text={{ request.build_absolute_uri|urlencode" role="button"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-primary btn-floating m-1" href="https://www.linkedin.com/sharing/share-offsite/?url={{request.build_absolute_uri}}" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div> 
 
   <hr>
   <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
@@ -92,7 +128,7 @@
         </p>
             <p>{{ post.author.profile.description }}</p>
     
-       <h2><a href="{% url 'author_profile' post.author.profile.id %}" class="btn btn-outline-primary"> View {{ post.author.profile.user.username }}'s Profile
+       <h2><a href="{% url 'author_profile' post.author.profile.id %}" class="btn btn-outline-primary"> View Author's Profile
        </a></h2>
       </div>
       </div>
