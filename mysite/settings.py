@@ -12,9 +12,9 @@ TEMPLATES_DIR = Path.joinpath(BASE_DIR,'templates')
 SECRET_KEY = "django-insecure-v!&=3^@c^=qw2y%o=ksa))oro77-2=3ssurmyjtd4#dnn(!rpp"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'members',
+    'onesignal',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "mysite.wsgi.application"
+ONESIGNAL_APP_ID = '52b1ad79-26df-4e4e-bcb0-291cc07a27ef'  
+ONESIGNAL_REST_API_KEY = 'ODMxMmYwZmUtNWZmNi00OTgwLWIyOWItNWM0NjFiNjljNThl' 
 
 
 # Database

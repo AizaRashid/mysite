@@ -19,4 +19,3 @@ urlpatterns = [
     path('authorprofile/<int:author_id>/',views.authorprofile,name='author_profile'),
     path('author/<int:author_id>/follow/',views.follow_toggle,name='follow_toggle'),
     ]
-
