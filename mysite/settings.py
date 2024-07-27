@@ -59,7 +59,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "mysite.wsgi.application"
-
+ONESIGNAL_APP_ID='52b1ad79-26df-4e4e-bcb0-291cc07a27ef'
+ONESIGNAL_API_KEY='ODMxMmYwZmUtNWZmNi00OTgwLWIyOWItNWM0NjFiNjljNThl'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
