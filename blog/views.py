@@ -7,13 +7,11 @@ from django.contrib.auth.views import LogoutView
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
                                   UpdateView,DeleteView)
-
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from onesignal import onesignal_client
 
 # Create your views here.
 def about(request):
