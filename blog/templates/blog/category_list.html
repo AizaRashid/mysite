@@ -7,11 +7,11 @@
         <div class="col-md-4">
             <div class="inner">
     <h2>Blog Categories</h2>
-
-    {% for item in cat_menu_list %}
+{% for item in cat_menu_list %}
         <h2><a class="dropdown-item" href="{% url 'category_list'%}">
             {{ item|slugify }} </a></h2>
-    {% endfor %}
+{% endfor %}
+
     </div>
       </div>
    </div>
