@@ -1,7 +1,7 @@
 from django.urls import path, include
-from blog.views import PostListView,about,PostDetailView,CreatePostView,AddCategoryView,
+from blog.views import (PostListView,about,PostDetailView,CreatePostView,AddCategoryView,
 PostUpdateView,DraftListView,PostDeleteView,post_publish,add_comment_to_post,comment_approve,
-comment_remove,CategoryView,LikeView,CategoryListView,authorprofile,follow_toggle
+comment_remove,CategoryView,LikeView,CategoryListView,authorprofile,follow_toggle)
 urlpatterns=[
     path('',PostListView.as_view(),name='post_list'),
     path('about/',about,name='about'),
