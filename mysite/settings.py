@@ -57,10 +57,10 @@ TEMPLATES = [
         },
     },
 ]
-
+import os
 WSGI_APPLICATION = "mysite.wsgi.application"
-ONESIGNAL_APP_ID = '52b1ad79-26df-4e4e-bcb0-291cc07a27ef'  
-ONESIGNAL_REST_API_KEY = 'ODMxMmYwZmUtNWZmNi00OTgwLWIyOWItNWM0NjFiNjljNThl' 
+ONESIGNAL_APP_ID = os.getenv('52b1ad79-26df-4e4e-bcb0-291cc07a27ef')
+ONESIGNAL_API_KEY =os.getenv('ODMxMmYwZmUtNWZmNi00OTgwLWIyOWItNWM0NjFiNjljNThl') 
 
 
 # Database
