@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'members',
-    'onesignal',
 ]
 
 MIDDLEWARE = [
