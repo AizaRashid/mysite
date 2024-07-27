@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-v!&=3^@c^=qw2y%o=ksa))oro77-2=3ssurmyjtd4#dnn(!rpp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['quirktale.com','www.quirktale.com','https://quirktale.com','https://www.quirkatle.com']
 
 # Application definition
 
