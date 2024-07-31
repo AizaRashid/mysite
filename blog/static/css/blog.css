@@ -4,9 +4,6 @@
 .dropdown-menu{
   background-color:#fdf0d5 ;
 }
-.bg-dark{
-  color:#b8f2e6;
-}
 
  .hero{
   height: 100vh;
@@ -239,7 +236,6 @@ a:active,a:focus{
   right: 0;
   z-index: 1000;
   width: 100%;
-  background-color:#b8f2e6;
 }
 .nav-link{
   text-align: center;
