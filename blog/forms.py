@@ -12,13 +12,14 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('author','title', 'title_tag','text','category','snippet','header_image')
+        fields = ('author','title', 'title_tag','text','category','snippet','header_image','alt_text')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'textinputclass',}),
             'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
             'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'}),
             'author':forms.Select(attrs={'class':'form-control'}),
+            'alt_text':forms.TextInput(attrs={'class':'form-control'}),
             'category':forms.Select(choices=choice_list,attrs={'class':'form-control'}),
             'snippet': forms.Textarea(attrs={'class': 'form-control'})
                  }

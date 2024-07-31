@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+	<div class="col-md-12 img-fluid">
+		<div class="hero">
+		<div class="text-container">
+			<h1 class="posttitle">Life,Tales,& Emotions</h1>
+			<p>A Place To listen,share, and increase your knowledge</p></br></br>
+			<a href="{% url 'post_list' %}"><button type="button" class="btn btn-dark
+			btn-lg rounded">Start listening</button></a>
+		</div>
+			<div class="image-container">
+		<div class="image-container">
+			<img src="{% static 'images/image.png' %}" class="img-fluid" alt="Flower">
+		</div>
+			<p></p>
+	     </div>
+	</div>
+	
+{% endblock %}

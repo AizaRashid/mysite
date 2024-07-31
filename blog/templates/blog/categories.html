@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
 <div class='container'>
    <div class="row">
       <div class="col-md-4">
@@ -12,6 +15,7 @@
       </div>
    </div>
 </div>
+
    {% for post in category_posts %}
     <div class="container">
   <div class="row">
@@ -41,9 +45,10 @@
       
          <h2>No Posts Made On {{ cats }}...</h2>
       </div>
-  </div>
+    </div>
+   </div>
 </div>
-</div>
+
 
 {% endif %}
 {% endblock %}

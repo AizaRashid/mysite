@@ -72,11 +72,28 @@
               
 
           </p>
-        <h2>{{ author_profile.user.username }} Posts</h2>
-        {% for post in author_posts %}
-        <li><a class="category" href="{%url 'post_detail' post.pk %}">{{post.title}}</a></li>
-        {% endfor %}
-
+      <h2>{{ author_profile.user.username }} Posts</h2>
+  {% for post in author_posts %}
+      <div class="container">
+         <div class="row">
+      <a class="post" href="{% url 'post_detail' pk=post.pk %}"><div class="col-md-4">
+      {% if post.header_image %}
+      <img class="image" src="{{ post.header_image.url }}">
+      {% else %}
+      <img class="image" src="{% static 'images/placeholder.png' %}">
+      {% endif %}
+      <div class="inner">
+        <p class="category" ><a href="{% url 'category' post.category %}">{{post.category|slugify}}</a><span class="date"><i class="fa fa-clock-o">
+                </i>{{ post.published_date|date:"D M Y"}} by {{post.author}}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.title_tag }}</p>
+      <a class="read-more" class="btn btn-primary" href="{% url 'post_detail' pk=post.pk %}">Read More</a>
+        <a  class="comment" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>
+            </div>
+     </div>
+  </div>   
+</div></a>
+ {% endfor %}
       </div>
    </div>
 </div>

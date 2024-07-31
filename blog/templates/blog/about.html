@@ -2,10 +2,13 @@
 {% load static %}
 {% block content %}
 <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+<div class="container">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="inner">
-				<img class="img" src="{% static 'images/explore.webp' %}">
+				<img class="img" src="{% static 'images/explore.webp' %}" alt="sunset">
 					<h2 class="text">QuirkTale</h2>
 					   </div>
          </div>
@@ -13,7 +16,7 @@
     <div class="row">
 		<div class="col-md-4">
 			<div class="inner">
-				<img class="image" src="{% static 'images/coding.jpg' %}">
+				<img class="image" src="{% static 'images/coding.jpg' %}" alt="programming">
    <h2>QuirkTale: Exploring the World of Technology</h2>
    <p class="category">Exploring different technologies,gadgets and coding languages around the globe!</h2>
    <p>I am a tech enthusiast who loves to explore the latest trends and innovations in the world of technology. From gadgets to software, I cover it all.</p>
@@ -25,25 +28,26 @@
     	<div class="col-md-4">
 			<div class="inner">
 				<a href="{% url 'post_new' %}">
-				<img class="img" src="{% static 'images/comp.webp' %}"></a>
+				<img class="img" src="{% static 'images/comp.webp' %}" alt="computer"></a>
 					<h2 class="text">Start Writing</h2>
 					   </div>
          </div>
     {% else %}
     </div>
+    <div class="row">
 		<div class="col-md-4">
 			<div class="inner">
 				<a href="{% url 'login_user' %}">
-				<img class="img" src="{% static 'images/comp.webp' %}"></a>
+				<img class="img" src="{% static 'images/comp.webp' %}" alt="computer"></a>
 					<h2 class="text">Start Writing</h2>
-					   </div>
-         </div>
+			</div>
+      </div>
     </div>
     {% endif %}
     <div class="row">
 		<div class="col-md-4">
 			<div class="inner">
-				<img class="image" src="{% static 'images/tech.jpg' %}">
+				<img class="image" src="{% static 'images/tech.jpg' %}" alt="innovation">
    <h2>QuirkTale:Share your QuirkTales and make them heard!</h2>
    <p class="category">Boost your online presence and connect with a passionate audience by sharing your stories and expertise on your blog.Start writing today and make your voice heard!</p>
       </div>
@@ -53,7 +57,7 @@
 		<div class="col-md-4">
 			<div class="inner">
 				<a href="{% url 'post_list' %}">
-				<img class="img" src="{% static 'images/girl.jpg' %}"></a>
+				<img class="img" src="{% static 'images/girl.jpg' %}" alt="painting"></a>
 					<h2 class="text">Latest</h2>
 					   </div>
          </div>
@@ -62,7 +66,7 @@
     <div class="row">
 		<div class="col-md-4">
 			<div class="inner">
-				<img class="image" src="{% static 'images/life.webp' %}">
+				<img class="image" src="{% static 'images/life.webp' %}" alt="photography">
    <h2>QuirkTale: Exploring life</h2>
    <p class="category">Exploring the art of living life and being positive!</h2>
    <p>I am same as you.In this world where AI is ruling let's learn how to deal with the powers of AI and technology.</p>
@@ -72,7 +76,7 @@
    <div class="row">
    <div class="col-md-4">
 			<div class="inner">
-				<img class="image" src="{% static 'images/hi.webp' %}">
+				<img class="image" src="{% static 'images/hi.webp' %}" alt="girls">
 					 <h2>Listen My QuirkTales and Share yours!</h2>
 					 <p class="category">Survival Of Fittest!Let's be the Fittest</h2>
 					 	<p>Let's Connect and Share because we are humans and humans have emotions!</p>
@@ -80,6 +84,9 @@
          </div>
     </div>
   
+</div>
+</div>
+</div>
 </div>
 
 {% endblock %}
