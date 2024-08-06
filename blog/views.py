@@ -17,6 +17,10 @@ from django.contrib import messages
 def home(request):
     return render(request,'blog/home.html')
 
+def top(request):
+    return render(request,'blog/top.html')
+
+
 def about(request):
     return render(request,'blog/about.html')
 

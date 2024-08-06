@@ -15,9 +15,9 @@
      crossorigin="anonymous"></script>
     <meta property="og:title" content="{{post.title}}" />  
     <meta property="og:description" content="{{post.snippet}}" />  
-    <meta property="og:image" content="{{post.header_image.url}}" />  
+    <meta property="og:image" content="{{post.header_image}}" />  
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />  
-    <meta property="og:type" content="article" />  
+    <meta property="og:type" content="article" />
 </head>  
 <body> 
     <!-- Required meta tags -->
@@ -67,11 +67,18 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="about" href="{% url 'about' %}">About Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="about" href="{% url 'post_list' %}">Read</a>
-        </li>
-
-
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Read
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'post_list' %}" style="text-transform:capitalize">Latest</a>
+              <a class="dropdown-item" href="{% url 'top' %}" style="text-transform:capitalize">Top Picks</a>
+              {% for item in cat_menu %}
+                <a class="dropdown-item" href="{% url 'category' item.name %}" style="text-transform:capitalize">{{ item }}</a>
+              {% endfor %}
+            </div>
+          </li>
       <!-- Category Menu Code -->
       {% if cat_menu %}
           <li class="nav-item dropdown">

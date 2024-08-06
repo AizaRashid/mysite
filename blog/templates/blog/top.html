@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+<a href="{% url 'post_list' %}">
+<div class="container">
+  <div class="column">
+    <div class="col-md-8">
+      <div class="container">
+         <div class="row">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/post1.jpg' %}" class="d-block w-100" alt="an image with some credit cards,an open laptop and a cup of coffee placed on a table">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/post2.jpg' %}" class="d-block w-100" alt="sunflower iamge">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/post3.jpg' %}" class="d-block w-100" alt="an image of a table with an open laptop nad some books placed on it">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ </div>
+  </div>   
+</div>
+</div>
+</div>
+</a>
+{% endblock %}
