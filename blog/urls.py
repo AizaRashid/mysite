@@ -3,8 +3,7 @@ from blog.views import (PostListView,about,PostDetailView,CreatePostView,AddCate
 PostUpdateView,DraftListView,PostDeleteView,post_publish,add_comment_to_post,comment_approve,
 comment_remove,CategoryView,LikeView,CategoryListView,authorprofile,follow_toggle,home,top)
 urlpatterns=[
-    path('',home,name='home'),
-    path('top/',top,name='top'),
+    path('',top,name='top'),
     path('postlist/',PostListView.as_view(),name='post_list'),
     path('about/',about,name='about'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
