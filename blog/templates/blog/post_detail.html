@@ -52,11 +52,9 @@
     {% endif %}
         - {{ total_likes }} Likes
     </form><br/><br/>
-  <button class="btn btn-outline-success">Shareit</button>
     <!-- Grid container -->
     <div class="share-btn-container">
       <!-- Section: Social media -->
-      <div class="col-md-4">
       <!--<section class="mb-4">-->
         <!-- Facebook -->
         <a class="btn btn-outline-primary btn-floating m-1" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&amp;text={{ post.title }}" role="button"
@@ -88,7 +86,6 @@
           ><i class="fab fa-linkedin-in"></i
         ></a>
       <!-- Section: Social media -->
-    </div>
     </div> 
 
   <hr>

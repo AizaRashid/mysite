@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.views import View  
 
 # Create your views here.
 def home(request):
@@ -20,6 +21,11 @@ def home(request):
 def top(request):
     return render(request,'blog/top.html')
 
+class AdsTxtView(View):  
+   def get(self, request):  
+      with open('mysite/ads.txt', 'r') as f:  
+        ads_txt_content = f.read()  
+      return HttpResponse(ads_txt_content, content_type='text/plain')
 
 def about(request):
     return render(request,'blog/about.html')

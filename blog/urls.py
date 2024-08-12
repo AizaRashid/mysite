@@ -1,8 +1,9 @@
 from django.urls import path, include
 from blog.views import (PostListView,about,PostDetailView,CreatePostView,AddCategoryView,
 PostUpdateView,DraftListView,PostDeleteView,post_publish,add_comment_to_post,comment_approve,
-comment_remove,CategoryView,LikeView,CategoryListView,authorprofile,follow_toggle,home,top)
+comment_remove,CategoryView,LikeView,CategoryListView,authorprofile,AdsTxtView,follow_toggle,home,top)
 urlpatterns=[
+    path('ads.txt',AdsTxtView.as_view()),  
     path('',top,name='top'),
     path('postlist/',PostListView.as_view(),name='post_list'),
     path('about/',about,name='about'),
